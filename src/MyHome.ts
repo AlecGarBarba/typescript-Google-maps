@@ -10,9 +10,11 @@ export default class MyHome implements Mappable {
     }
 
     constructor(passenger: Person){
-        const numberedLocation = passenger.getLocationNumbered;
-
-
+        const numberedLocation = passenger.getLocationNumbered; 
         this.location = { lat: ''+(numberedLocation.lat+0.03), lng: ''+(numberedLocation.lng-0.02)}
+    }
+
+    markerTitle(address: ()=>string): string{
+        return `La dirección de mi casa es ${address()}`
     }
 }
