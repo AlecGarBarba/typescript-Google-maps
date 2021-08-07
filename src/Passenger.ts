@@ -1,15 +1,11 @@
-//import faker from 'faker';
+import faker from 'faker';
+import Person from './Person'
+ 
+export default class Passenger extends Person{
 
-type Loc = {
-    latitude: string;
-    lng : string;
-}
-class Passenger{
-    name:string;
-    location: Loc;
-
-    constructor(name:string, location: Loc){
-        this.name = name;
-        this.location = location;
+    constructor(){
+        super(faker.name.firstName(), {lat: faker.address.latitude(), lng: faker.address.longitude()});
     }
+
+    
 }
